@@ -1,0 +1,56 @@
+:root {
+  /* Paleta — betume, verniz, ouro, carmim, marfim */
+  --betume: #0b0908;
+  --betume-2: #14100d;
+  --verniz: #1e1712;
+  --verniz-2: #2a2019;
+  --fumo: #8a7d70;
+  --fumo-2: #5a5047;
+  --marfim: #ede3d1;
+  --marfim-2: #cbbfa9;
+  --ouro: #c99a3f;
+  --ouro-2: #e4bd6a;
+  --ouro-3: #7d5c22;
+  --carmim: #7a1f2b;
+  --carmim-2: #a43040;
+  --frio: #8fb3ff;
+
+  --bg: var(--betume);
+  --bg-elev: var(--verniz);
+  --fg: var(--marfim);
+  --fg-muted: var(--fumo);
+  --accent: var(--ouro);
+  --line: rgba(237, 227, 209, 0.12);
+  --line-strong: rgba(237, 227, 209, 0.28);
+
+  /* Tipografia */
+  --font-display: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --fs-hero: clamp(3.4rem, 11vw, 9.5rem);
+  --fs-h1: clamp(2.6rem, 6vw, 5.2rem);
+  --fs-h2: clamp(1.9rem, 3.6vw, 3rem);
+  --fs-h3: clamp(1.35rem, 2vw, 1.7rem);
+  --fs-body: clamp(1.05rem, 1.15vw, 1.2rem);
+  --fs-small: 0.92rem;
+  --fs-mono: 0.78rem;
+
+  --lh-tight: 0.98;
+  --lh-body: 1.6;
+
+  /* Layout */
+  --gutter: clamp(16px, 4vw, 56px);
+  --measure: 62ch;
+  --nav-h: 64px;
+  --planta-w: clamp(280px, 30vw, 420px);
+
+  /* Movimento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 420ms;
+  --dur-slow: 900ms;
+
+  color-scheme: dark;
+}

@@ -1,0 +1,290 @@
+.percurso {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--planta-w);
+  gap: clamp(40px, 6vw, 120px);
+  padding: 0 var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.coluna {
+  min-width: 0;
+  max-width: 760px;
+}
+
+/* ---------- planta fixa ---------- */
+.plantaWrap {
+  position: relative;
+}
+
+.plantaSticky {
+  position: sticky;
+  top: calc(var(--nav-h) + 16px);
+  padding: 20px 0;
+}
+
+.plantaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  min-height: 3.2em;
+}
+
+.plantaObra {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--marfim);
+}
+
+/* ---------- movimentos ---------- */
+.movimento {
+  padding-top: clamp(120px, 20vh, 240px);
+}
+
+.movHeader {
+  padding: 32px 0 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.movHeader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.movTitulo {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+
+.movTexto {
+  color: var(--marfim-2);
+  font-size: calc(var(--fs-body) * 1.12);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.nota {
+  margin-top: 1.2em;
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+  line-height: 1.7;
+  max-width: 54ch;
+}
+
+.obras {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(120px, 18vh, 220px);
+  padding: clamp(72px, 10vh, 120px) 0 0;
+}
+
+/* ---------- obra ---------- */
+.obra {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 5vh, 56px);
+}
+
+.figure {
+  margin: 0;
+  position: relative;
+  background: var(--verniz);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(237, 227, 209, 0.06);
+  overflow: hidden;
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  background: var(--betume-2);
+}
+
+.figureRetrato {
+  max-width: min(100%, 600px);
+}
+
+.obraDestaque .figure {
+  box-shadow: 0 0 120px -20px rgba(228, 189, 106, 0.35), 0 40px 80px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(228, 189, 106, 0.25);
+}
+
+.credito {
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--line);
+}
+
+.texto {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  column-gap: 24px;
+  row-gap: 0;
+}
+
+.numero {
+  grid-column: 1;
+  grid-row: 1 / span 6;
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  line-height: 1;
+  color: var(--ouro);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.numero > span:first-child {
+  font-variant-numeric: lining-nums;
+}
+
+.numeroSep {
+  width: 32px;
+  height: 1px;
+  background: var(--ouro-3);
+}
+
+.numero > span:last-child {
+  display: none;
+}
+
+.onde {
+  grid-column: 2;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ouro);
+  margin-bottom: 16px;
+}
+
+.obraTitulo {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+.artista {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  color: var(--marfim-2);
+}
+
+.obraTitulo em {
+  font-style: italic;
+  color: var(--marfim);
+}
+
+.ficha {
+  grid-column: 2;
+  margin: 18px 0 36px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.justificativa {
+  grid-column: 2;
+  color: var(--marfim);
+  font-size: calc(var(--fs-body) * 1.16);
+  line-height: 1.78;
+  max-width: 58ch;
+}
+
+.porque {
+  grid-column: 2;
+  margin-top: 36px;
+  padding: 22px 26px;
+  border-left: 2px solid var(--ouro-3);
+  background: linear-gradient(90deg, rgba(201, 154, 63, 0.09), transparent 75%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--marfim-2);
+  line-height: 1.7;
+  max-width: 58ch;
+}
+
+.saida {
+  padding: clamp(120px, 20vh, 240px) 0 clamp(96px, 14vh, 180px);
+  max-width: var(--measure);
+}
+
+.saida > div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 900px) {
+  .percurso {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .coluna {
+    max-width: none;
+  }
+  .plantaWrap {
+    order: -1;
+    position: sticky;
+    top: var(--nav-h);
+    z-index: 3;
+    margin: 0 calc(-1 * var(--gutter));
+    background: rgba(11, 9, 8, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .plantaSticky {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    align-items: center;
+    gap: 12px;
+    padding: 8px var(--gutter);
+  }
+  .plantaInfo {
+    margin: 0;
+    min-height: 0;
+  }
+  .plantaObra {
+    font-size: 1.05rem;
+  }
+  .figure img {
+    max-height: 70vh;
+  }
+  .texto {
+    grid-template-columns: 1fr;
+  }
+  .numero {
+    grid-row: auto;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+  }
+  .onde,
+  .obraTitulo,
+  .ficha,
+  .justificativa,
+  .porque {
+    grid-column: 1;
+  }
+}

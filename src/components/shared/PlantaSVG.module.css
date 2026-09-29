@@ -1,0 +1,240 @@
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ---------- modo tela (escuro) ---------- */
+.tela {
+  --pl-ink: var(--marfim);
+  --pl-quiet: var(--fumo);
+  --pl-wall: var(--marfim-2);
+  --pl-route: var(--ouro);
+  --pl-exit: var(--fumo);
+  --pl-sala: rgba(237, 227, 209, 0.025);
+  --pl-sala-ativa: rgba(201, 154, 63, 0.14);
+  --pl-dot: var(--verniz);
+  --pl-dot-stroke: var(--fumo-2);
+}
+
+/* ---------- modo print (claro) ---------- */
+.print {
+  --pl-ink: #111;
+  --pl-quiet: #555;
+  --pl-wall: #111;
+  --pl-route: #9a6a12;
+  --pl-exit: #777;
+  --pl-sala: transparent;
+  --pl-sala-ativa: transparent;
+  --pl-dot: #fff;
+  --pl-dot-stroke: #444;
+}
+
+.sala {
+  fill: var(--pl-sala);
+  stroke: none;
+  transition: fill var(--dur-slow) var(--ease-out);
+}
+
+.salaAtiva {
+  fill: var(--pl-sala-ativa);
+}
+
+.salaNome {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--pl-quiet);
+  transition: fill var(--dur) var(--ease-out);
+}
+
+.salaNomeAtiva {
+  fill: var(--pl-route);
+}
+
+.paredes line {
+  stroke: var(--pl-wall);
+  stroke-width: 3;
+  stroke-linecap: square;
+}
+
+.porta {
+  stroke: var(--pl-route);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+  opacity: 0.6;
+}
+
+.portaFora {
+  stroke: var(--pl-quiet);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+  opacity: 0.5;
+}
+
+.fenda {
+  fill: none;
+  stroke: var(--pl-quiet);
+  stroke-width: 1.5;
+  transition: stroke var(--dur) var(--ease-out);
+}
+
+.fendaAtiva {
+  stroke: var(--frio);
+}
+
+.rota {
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset var(--dur-slow) var(--ease-in-out);
+}
+
+.rotaIda {
+  stroke: var(--pl-route);
+}
+
+.rotaSaida {
+  stroke: var(--pl-exit);
+}
+
+.print .rota {
+  display: none;
+}
+
+.rotaPrint,
+.rotaPrintSaida {
+  fill: none;
+  stroke-width: 1.75;
+  stroke-dasharray: 6 5;
+  stroke-linejoin: round;
+}
+
+.rotaPrint {
+  stroke: var(--pl-route);
+}
+
+.rotaPrintSaida {
+  stroke: var(--pl-exit);
+}
+
+.arrowHead {
+  fill: var(--pl-route);
+}
+
+.arrowHeadSaida {
+  fill: var(--pl-exit);
+}
+
+.obra {
+  cursor: default;
+}
+
+.obra[role='button'] {
+  cursor: pointer;
+}
+
+.dot {
+  fill: var(--pl-dot);
+  stroke: var(--pl-dot-stroke);
+  stroke-width: 1.25;
+  transition: fill var(--dur) var(--ease-out), stroke var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  fill: var(--pl-ink);
+  pointer-events: none;
+  transition: fill var(--dur) var(--ease-out);
+}
+
+.obraVisitada .dot {
+  stroke: var(--pl-route);
+}
+
+.obraAtiva .dot {
+  fill: var(--pl-route);
+  stroke: var(--ouro-2);
+}
+
+.obraAtiva .num {
+  fill: var(--betume);
+}
+
+.obraArtemisia .dot {
+  stroke: var(--pl-route);
+  stroke-width: 2;
+}
+
+.print .obraArtemisia .dot {
+  stroke: #9a6a12;
+  fill: #f6e7c8;
+}
+
+.glow {
+  animation: pulse 2.4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.entrada {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--pl-quiet);
+}
+
+.legendaTitulo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  fill: var(--pl-ink);
+}
+
+.legendaNome {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--pl-ink);
+}
+
+.legendaLocal,
+.legendaTexto {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  fill: var(--pl-quiet);
+}
+
+.legendaIda {
+  stroke: var(--pl-route);
+  stroke-width: 1.75;
+  stroke-dasharray: 6 5;
+}
+
+.legendaSaida {
+  stroke: var(--pl-exit);
+  stroke-width: 1.75;
+  stroke-dasharray: 6 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: none;
+  }
+}
